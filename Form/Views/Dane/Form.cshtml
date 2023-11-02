@@ -4,46 +4,53 @@
     ViewData["Title"] = "Form";
 }
 
-<h1>Form</h1>
 
-<h4>Formularz</h4>
+<h4>Rejestracja</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Form" method="post">
             <div asp-validation-summary="All"></div>
             <div>
-                <label asp-for="Imie">Twoje imie</label>
-                <input asp-for="Imie"/>
+                <label asp-for="Imie" class="control-label">Imię</label>
+                <input asp-for="Imie" class="form-control"/>
             </div>
             <div>
-                <label asp-for="Nazwisko">Twoje nazwisko</label>
-                <input asp-for="Nazwisko" />
+                <label asp-for="Nazwisko" class="control-label">Nazwisko</label>
+                <input asp-for="Nazwisko" class="form-control"/>
             </div>
             <div>
-                <label asp-for="Email">Twoj email</label>
-                <input asp-for="Email"/>
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control"/>
             </div>
             <div>
-                <label asp-for="Haslo">Twoj haslo</label>
-                <input asp-for="Haslo" />
+                <label asp-for="Haslo" class="control-label">Hasło</label>
+                <input asp-for="Haslo" class="form-control"/>
+            </div>
+             <div>
+                <label asp-for="PotwierdzHaslo" class="control-label">Powtórz hasło</label>
+                <input asp-for="PotwierdzHaslo" class="form-control"/>
             </div>
             <div>
-                <label asp-for="Temat">Temat</label>
-                <input asp-for="Temat"/>
+                <label asp-for="Tel" class="control-label">Numer telefonu</label>
+                <input asp-for="Tel" class="form-control" type="tel"/>
             </div>
             <div>
-                <label asp-for="Tresc">Tresc</label>
-                <input asp-for="Tresc"/>
+                <label asp-for="Wiek" class="control-label">Wiek</label>
+                <input asp-for="Wiek" class="form-control"/>
             </div>
             <div>
-                <input type="submit"/>
+                <label asp-for="Miasto" class="control-label">Miasto</label>
+                <select asp-for="Miasto"
+                    asp-items="Html.GetEnumSelectList<Dane.Miasta>()" class="form-control">
+                </select> 
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary"/>
             </div>
         </form>
     </div>
 </div>
 
 
-@*@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}*@
+

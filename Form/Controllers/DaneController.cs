@@ -23,10 +23,10 @@ namespace Form.Controllers
             }
             else return View();
         }
-        public IActionResult Wynik(Dane dane)
+        public IActionResult Wynik()
         {
 
-            return View(dane);
+            return View();
         }
     }
 }
